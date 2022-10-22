@@ -1,1 +1,1 @@
-# GIGABYTE-Z590-Gaming-G--i510500-5600XT-hackintosh
+# GIGABYTE-Z590-G-i510500-5600XT-hackintosh
