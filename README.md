@@ -1,0 +1,1 @@
+# GIGABYTE-Z590-Gaming-G--i510500-5600XT-hackintosh
