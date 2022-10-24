@@ -2,45 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>#WARNING - 1</key>
-	<string>This is just a sample. Do NOT try loading it.</string>
-	<key>#WARNING - 2</key>
-	<string>Ensure you understand EVERY field before booting.</string>
-	<key>#WARNING - 3</key>
-	<string>In most cases recommended to use Sample.plist</string>
-	<key>#WARNING - 4</key>
-	<string>Use SampleCustom.plist only for special cases.leo</string>
 	<key>ACPI</key>
 	<dict>
 		<key>Add</key>
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string></string>
+				<string>Fix AppleSMBus support in macOS</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-AWAC-DISABLE.aml</string>
+				<string>SSDT-SBUS-MCHC.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string></string>
+				<string>Defines dummy EC (embedded controller) device</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-EC-USBX-DESKTOP.aml</string>
+				<string>SSDT-EC.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-GPRW.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
+				<string>Enables native CPU power management</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -48,11 +32,43 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string></string>
+				<string>Fixes RTC-related boot issues (AWAC = A Weird Ass Clock)</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-PMC.aml</string>
+				<string>SSDT-AWAC.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Turn off the RHUB device and force macOS to manually rebuild the ports</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-RHUB.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Works with USBWakeFixup.kext to enable proper wake from sleep</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-USBW.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable wake from USB/Bluetooth; wake only with power button</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-GPRW.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Injects 15 custom USB ports map for Z590-VISION-G</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-UIAC-Z590-VISION-G-V3.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -61,22 +77,6 @@
 				<true/>
 				<key>Path</key>
 				<string>SSDT-RX5600XT.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-SBUS-MCHC-0.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-USB-Reset.aml</string>
 			</dict>
 		</array>
 		<key>Delete</key>
@@ -217,11 +217,30 @@
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>BgCbPg==</data>
+				<data>AwCYPg==</data>
 				<key>AAPL,slot-name</key>
-				<string>Internal@0,2,0</string>
+				<string>Slot-0</string>
+				<key>device-id</key>
+				<data>mD4AAA==</data>
 				<key>device_type</key>
 				<string>Display controller</string>
+				<key>enable-metal</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-patch-enable</key>
+				<data>AQAAAA==</data>
+				<key>igfxfw</key>
+				<data>AgAAAA==</data>
+				<key>AAPL00,override-no-connect</key>
+				<data>
+				AP///////wAt83ycAAAAABYdAQS1PCFgP2+xp1VMniUM
+				UFS9a4CBwIGAlQCpwLMA0cABAQEBTdAAoPBwPoAwIDUA
+				WEohAAAaAAAA/wAwMDAwMDAwMDAwMDAwAAAA/QAsP6Cg
+				CAEKICAgICAgAAAA/ABLT0lPUyBLMjcxOVUKAZQCAyN0
+				S5CfhZQEEwMSAQIRIwkHB4MBAADjBeMB5gYHAWBgRAR0
+				ADDycFqAsFg2AFZQIQAAGlZeAKCgoClQMCA1AFVQIQAA
+				HgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlg==
+				</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
 				<key>model</key>
@@ -237,6 +256,52 @@
 				<string>ATY,Adder</string>
 				<key>@3,name</key>
 				<string>ATY,Adder</string>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,1,0/0,0/0,0/0,0</string>
+				<key>device_type</key>
+				<string>VGA compatible controller</string>
+				<key>hda-gfx</key>
+				<string>onboard-2</string>
+				<key>model</key>
+				<string>Navi 10 [Radeon RX 5600 OEM/5600 XT / 5700/5700 XT]</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1B,0x2)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>#device-id</key>
+				<data>8xWGgA==</data>
+				<key>device_type</key>
+				<string>Ethernet controller</string>
+				<key>model</key>
+				<string>Intel i225-V</string>
+				<key>vendor-id</key>
+				<data>h4AAAA==</data>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x14,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,20,0</string>
+				<key>device_type</key>
+				<string>USB controller</string>
+				<key>model</key>
+				<string>GIGABYTE Z590 Vision G USB 3.2 XHCI Host Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x17,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,23,0</string>
+				<key>device_type</key>
+				<string>SATA controller</string>
+				<key>model</key>
+				<string>GIGABYTE Z590 Vision G PCH SATA AHCI Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1B,0x4)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,27,4/0,0</string>
+				<key>device_type</key>
+				<string>Network controller</string>
+				<key>model</key>
+				<string>BCM4360 802.11ac Wireless Network Adapter</string>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -419,6 +484,42 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/WhateverGreen</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>USBPorts.kext</string>
+				<key>Comment</key>
+				<string>Injects 15 custom USB ports map for Z590-VISION-G</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string></string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>USBWakeFixup.kext</string>
+				<key>Comment</key>
+				<string>Fix for ACPI device with the right wakeup params (systems without a working EC) [USBWakeFixup]</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/USBWakeFixup</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -893,7 +994,7 @@
 			<key>TakeoffDelay</key>
 			<integer>0</integer>
 			<key>Timeout</key>
-			<integer>3</integer>
+			<integer>20</integer>
 		</dict>
 		<key>Debug</key>
 		<dict>
@@ -1091,7 +1192,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-v keepsyms=1 debug=0x100 npci=0x2000 watchdog=0 e1000=0 agdpmod=pikera</string>
+				<string>-v keepsyms=1 debug=0x100 npci=0x2000 watchdog=0 agdpmod=pikera</string>
 				<key>csr-active-config</key>
 				<data>7w8AAA==</data>
 				<key>prev-lang:kbd</key>
