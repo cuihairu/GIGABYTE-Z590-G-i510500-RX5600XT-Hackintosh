@@ -70,14 +70,6 @@
 				<key>Path</key>
 				<string>SSDT-UIAC-Z590-VISION-G-V3.aml</string>
 			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-RX5600XT.aml</string>
-			</dict>
 		</array>
 		<key>Delete</key>
 		<array/>
@@ -264,7 +256,7 @@
 				<key>hda-gfx</key>
 				<string>onboard-2</string>
 				<key>model</key>
-				<string>Navi 10 [Radeon RX 5600 OEM/5600 XT / 5700/5700 XT]</string>
+				<string>Radeon RX 5600 XT</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1B,0x2)/Pci(0x0,0x0)</key>
 			<dict>
