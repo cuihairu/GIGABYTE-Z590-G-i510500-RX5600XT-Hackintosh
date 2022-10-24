@@ -262,6 +262,16 @@
 				<string>VGA compatible controller</string>
 				<key>hda-gfx</key>
 				<string>onboard-2</string>
+				<key>AAPL00,DualLink</key>
+				<data>AQAAAA==</data>
+				<key>ATY,Copyright</key>
+				<string>Copyright AMD Inc. All Rights Reserved. 2005-2022</string>
+				<key>ATY,EFIVersion</key>
+				<string>01.01.183</string>
+				<key>ATY,EFIVersionB</key>
+				<string>113-D1820501-101</string>
+				<key>Force_Load_FalconSMUFW</key>
+				<true/>
 				<key>model</key>
 				<string>Navi 10 [Radeon RX 5600 OEM/5600 XT / 5700/5700 XT]</string>
 			</dict>
