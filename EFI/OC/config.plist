@@ -217,9 +217,11 @@
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>AwCYPg==</data>
+				<data>AACbPg==</data>
 				<key>AAPL,slot-name</key>
 				<string>Slot-0</string>
+				<key>AAPL00,override-no-connect</key>
+				<data>AP///////wAt83ycAAAAABYdAQS1PCFgP2+xp1VMniUMUFS9a4CBwIGAlQCpwLMA0cABAQEBTdAAoPBwPoAwIDUAWEohAAAaAAAA/wAwMDAwMDAwMDAwMDAwAAAA/QAsP6CgCAEKICAgICAgAAAA/ABLT0lPUyBLMjcxOVUKAZQCAyN0S5CfhZQEEwMSAQIRIwkHB4MBAADjBeMB5gYHAWBgRAR0ADDycFqAsFg2AFZQIQAAGlZeAKCgoClQMCA1AFVQIQAAHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlg==</data>
 				<key>device-id</key>
 				<data>mD4AAA==</data>
 				<key>device_type</key>
@@ -228,21 +230,10 @@
 				<data>AQAAAA==</data>
 				<key>framebuffer-patch-enable</key>
 				<data>AQAAAA==</data>
-				<key>igfxfw</key>
-				<data>AgAAAA==</data>
-				<key>AAPL00,override-no-connect</key>
-				<data>
-				AP///////wAt83ycAAAAABYdAQS1PCFgP2+xp1VMniUM
-				UFS9a4CBwIGAlQCpwLMA0cABAQEBTdAAoPBwPoAwIDUA
-				WEohAAAaAAAA/wAwMDAwMDAwMDAwMDAwAAAA/QAsP6Cg
-				CAEKICAgICAgAAAA/ABLT0lPUyBLMjcxOVUKAZQCAyN0
-				S5CfhZQEEwMSAQIRIwkHB4MBAADjBeMB5gYHAWBgRAR0
-				ADDycFqAsFg2AFZQIQAAGlZeAKCgoClQMCA1AFVQIQAA
-				HgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlg==
-				</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
+				<key>igfxfw</key>
+				<data>AgAAAA==</data>
 				<key>model</key>
 				<string>Intel CoffeeLake-S GT2 [UHD Graphics 630]</string>
 			</dict>
@@ -258,10 +249,6 @@
 				<string>ATY,Adder</string>
 				<key>AAPL,slot-name</key>
 				<string>Internal@0,1,0/0,0/0,0/0,0</string>
-				<key>device_type</key>
-				<string>VGA compatible controller</string>
-				<key>hda-gfx</key>
-				<string>onboard-2</string>
 				<key>AAPL00,DualLink</key>
 				<data>AQAAAA==</data>
 				<key>ATY,Copyright</key>
@@ -271,7 +258,11 @@
 				<key>ATY,EFIVersionB</key>
 				<string>113-D1820501-101</string>
 				<key>Force_Load_FalconSMUFW</key>
-				<true/>
+				<integer>1</integer>
+				<key>device_type</key>
+				<string>VGA compatible controller</string>
+				<key>hda-gfx</key>
+				<string>onboard-2</string>
 				<key>model</key>
 				<string>Navi 10 [Radeon RX 5600 OEM/5600 XT / 5700/5700 XT]</string>
 			</dict>
@@ -1202,7 +1193,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-v keepsyms=1 debug=0x100 npci=0x2000 watchdog=0 agdpmod=pikera</string>
+				<string>-v keepsyms=1 swd_panic=1 debug=0x100 npci=0x2000 watchdog=0 agdpmod=pikera</string>
 				<key>csr-active-config</key>
 				<data>7w8AAA==</data>
 				<key>prev-lang:kbd</key>
