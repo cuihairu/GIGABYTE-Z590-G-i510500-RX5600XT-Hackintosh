@@ -1,5 +1,11 @@
 # GIGABYTE-Z590-G-i510500-5600XT-hackintosh
 
+Install macOS Ventura on GIGABYTE Z590-Vison-G Mainboard with 10th Gen Intel CPU.
+
+### Information 
+
+- macOS: [Ventura](https://www.apple.com/macos/ventura/)
+- bootloader: [OpenCore 0.8.5](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.8.5)
 
 ### Hardware
 
