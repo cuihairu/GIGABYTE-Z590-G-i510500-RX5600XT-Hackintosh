@@ -40,6 +40,8 @@ Settings
     - Serial Port : Disabled
     - SATA Andd RST Configuration
       - SATA Mode Selection : AHCI
+    - Miscellaneous
+      - VT-D : Disabled
 Boot
     - Secure Boot
        Preferred Operating Mode : Auto
