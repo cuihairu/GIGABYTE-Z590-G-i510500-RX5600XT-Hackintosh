@@ -19,3 +19,29 @@ Install macOS Ventura on GIGABYTE Z590-Vison-G Mainboard with 10th Gen Intel CPU
 | WiFi / BT    | BCM94360CD                | [taobao](https://m.tb.cn/h.UXkgkEk?tk=SmoX2D0F2aq)                                                                                           |
 
 
+### BIOS 
+
+- firmware 
+
+[Version F7b](https://www.gigabyte.cn/Motherboard/Z590-VISION-G-rev-10/support#support-dl-bios)
+
+- settings
+
+```
+Settings
+    - Platform Power
+      - ErP : Enabled
+    - IO Ports
+      - Internal Graphics : Enabled
+      - DVMT Pre-Allocated : 128M
+      - DVMT Total Gfx Mem : MAX
+      - Above 4G Decoding : Enabled
+      - Re-Size BAR Support : Auto
+    - Serial Port : Disabled
+    - SATA Andd RST Configuration
+      - SATA Mode Selection : AHCI
+Boot
+    - Secure Boot
+       Preferred Operating Mode : Auto
+    - CSM Support : Disabled
+```
