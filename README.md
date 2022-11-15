@@ -2,6 +2,8 @@
 
 Install macOS Ventura on GIGABYTE Z590-Vison-G Mainboard with 10th Gen Intel CPU.
 
+![snapshot](docs/snapshot.png)
+
 ### Information 
 
 - macOS: [Ventura](https://www.apple.com/macos/ventura/)
