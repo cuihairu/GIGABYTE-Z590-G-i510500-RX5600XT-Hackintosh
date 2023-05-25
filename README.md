@@ -25,7 +25,7 @@ Install macOS Ventura on GIGABYTE Z590-Vison-G Mainboard with 10th Gen Intel CPU
 
 - firmware 
 
-[Version F7b](https://www.gigabyte.cn/Motherboard/Z590-VISION-G-rev-10/support#support-dl-bios)
+[Version F7](https://www.gigabyte.cn/Motherboard/Z590-VISION-G-rev-10/support#support-dl-bios)
 
 - settings
 
