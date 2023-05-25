@@ -49,3 +49,66 @@ Boot
        Preferred Operating Mode : Auto
     - CSM Support : Disabled
 ```
+
+---
+
+### EFI 
+
+#### Config
+
+11 Gen CPU
+
+```xml
+<key>Emulate</key>
+<dict>
+  <key>Cpuid1Data</key>
+  <data>6wYJAAAAAAAAAAAAAAAAAA==</data>
+  <key>Cpuid1Mask</key>
+  <data>/////wAAAAAAAAAAAAAAAA==</data>
+  <key>DummyPowerManagement</key>
+  <false/>
+  <key>MaxKernel</key>
+  <string></string>
+  <key>MinKernel</key>
+  <string></string>
+</dict>
+```
+
+#### Kexts
+
+| Kext                                 | Version| Author                                                                                                             |
+|:------------------------------------:|:------:|:------------------------------------------------------------------------------------------------------------------ |
+| XHCI-unsupported.kext                | 0.9.2  | [RehabMan/OS-X-USB-Inject-All](https://github.com/RehabMan/OS-X-USB-Inject-All/tree/master/XHCI-unsupported.kext)  |
+| AirportBrcmFixup.kext                | 2.1.7  | [acidanthera/AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup/releases)                           |
+| Lilu.kext                            | 1.6.4  | [acidanthera/Lilu](https://github.com/acidanthera/Lilu/releases)                                                   |
+| RestrictEvents.kext                  | 1.1.1  | [acidanthera/RestrictEvents](https://github.com/acidanthera/RestrictEvents)                                        |
+| SMCProcessor.kext                    | 1.3.1  | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases)                                       |
+| SMCSuperIO.kext                      | 1.3.1  | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases)                                       |
+| VirtualSMC.kext                      | 1.3.1  | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases)                                       |
+| AppleIntelI210Ethernet.kext          | 2.3.1  |                                                                                                                    |
+| AppleIGC                             | 1.0.0  | [SongXiaoXi/AppleIGC](https://github.com/SongXiaoXi/AppleIGC)                                                      |
+| FeatureUnlock.kext                   | 1.1.4  | [acidanthera/FeatureUnlock](https://github.com/acidanthera/FeatureUnlock/releases)                                                                                        |
+
+
+---
+
+### Update macOS
+
+Check the official update-guide: [OpenCore-Post-Install/update](https://dortania.github.io/OpenCore-Post-Install/universal/update.html)
+
+1. Backup
+   - Full system backup with `Time Machine` or similar software
+   - Copy current EFI to OpenCore USB-Drive for recovery purpose
+2. Download
+   - Latest version of OpenCore and replace files in EFI
+   - Updates for all installed kexts and replace in EFI
+3. Reboot
+   - Boot with updated OpenCore version and kexts
+   - If the system doesn't boot, use OpenCore USB-Drive to roll back
+4. Update
+   - Start macOS Update from `System Settings` -> `Software Update`
+   - With OpenCore the update process should work automatically
+   - If `Software Update` shows `Mac version is up to date`, download macOS Installer from AppStore and start the update manually
+
+If the system doesn't boot, try to fix the problem or revert to the latest EFI or system-backup.
+
