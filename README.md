@@ -86,7 +86,7 @@ Boot
 | SMCSuperIO.kext                      | 1.3.1  | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases)                                       |
 | VirtualSMC.kext                      | 1.3.1  | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases)                                       |
 | AppleIntelI210Ethernet.kext          | 2.3.1  |                                                                                                                    |
-| AppleIGC                             | 1.0.0  | [SongXiaoXi/AppleIGC](https://github.com/SongXiaoXi/AppleIGC)                                                      |
+| AppleIGC                             | 1.1.0  | [SongXiaoXi/AppleIGC](https://github.com/SongXiaoXi/AppleIGC)                                                      |
 | FeatureUnlock.kext                   | 1.1.4  | [acidanthera/FeatureUnlock](https://github.com/acidanthera/FeatureUnlock/releases)                                                                                        |
 
 
