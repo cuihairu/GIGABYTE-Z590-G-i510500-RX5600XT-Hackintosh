@@ -74,6 +74,42 @@ Boot
 </dict>
 ```
 
+RX5600XT
+
+Path: `DeviceProperties->Add`
+
+```xml
+<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+<dict>
+    <key>@0,name</key>
+    <string>ATY,Adder</string>
+    <key>@1,name</key>
+    <string>ATY,Adder</string>
+    <key>@2,name</key>
+    <string>ATY,Adder</string>
+    <key>@3,name</key>
+    <string>ATY,Adder</string>
+    <key>AAPL,slot-name</key>
+    <string>Internal@0,1,0/0,0/0,0/0,0</string>
+    <key>AAPL00,DualLink</key>
+    <data>AQAAAA==</data>
+    <key>ATY,Copyright</key>
+    <string>Copyright AMD Inc. All Rights Reserved. 2005-2022</string>
+    <key>ATY,EFIVersion</key>
+    <string>01.01.183</string>
+    <key>ATY,EFIVersionB</key>
+    <string>113-D1820501-101</string>
+    <key>Force_Load_FalconSMUFW</key>
+    <integer>1</integer>
+    <key>device_type</key>
+    <string>VGA compatible controller</string>
+    <key>hda-gfx</key>
+    <string>onboard-2</string>
+    <key>model</key>
+    <string>Radeon RX 5600 XT</string>
+</dict>
+```
+
 #### Kexts
 
 | Kext                                 | Version| Author                                                                                                             |
