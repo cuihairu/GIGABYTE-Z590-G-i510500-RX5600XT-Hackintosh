@@ -16,14 +16,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Defines dummy EC (embedded controller) device</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-EC.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Enables native CPU power management</string>
 				<key>Enabled</key>
 				<true/>
@@ -37,14 +29,6 @@
 				<true/>
 				<key>Path</key>
 				<string>SSDT-AWAC.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Turn off the RHUB device and force macOS to manually rebuild the ports</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-RHUB.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -69,6 +53,14 @@
 				<true/>
 				<key>Path</key>
 				<string>SSDT-UIAC-Z590-VISION-G-V3.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Defines dummy EC (embedded controller) device</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-EC-USBX-DESKTOP.aml</string>
 			</dict>
 		</array>
 		<key>Delete</key>
@@ -993,6 +985,8 @@
 			<true/>
 			<key>HideAuxiliary</key>
 			<false/>
+			<key>InstanceIdentifier</key>
+			<string></string>
 			<key>LauncherOption</key>
 			<string>Disabled</string>
 			<key>LauncherPath</key>
@@ -1203,7 +1197,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-v keepsyms=1 debug=0x100 -lilubetaall</string>
+				<string>-v keepsyms=1 debug=0x100 npci=0x2000 watchdog=0  -lilubetaall</string>
 				<key>csr-active-config</key>
 				<data>7w8AAA==</data>
 				<key>prev-lang:kbd</key>
@@ -1675,6 +1669,8 @@
 			<key>ResizeGpuBars</key>
 			<integer>0</integer>
 			<key>ResizeUsePciRbIo</key>
+			<false/>
+			<key>ShimRetainProtocol</key>
 			<false/>
 			<key>TscSyncTimeout</key>
 			<integer>0</integer>
