@@ -35,8 +35,8 @@ Settings
       - ErP : Enabled
     - IO Ports
       - Internal Graphics : Enabled
-      - DVMT Pre-Allocated : 128M
-      - DVMT Total Gfx Mem : MAX
+      - DVMT Pre-Allocated : 64M
+      - DVMT Total Gfx Mem : 256M
       - Above 4G Decoding : Enabled
       - Re-Size BAR Support : Auto
     - Serial Port : Disabled
